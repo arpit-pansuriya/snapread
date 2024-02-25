@@ -12,6 +12,7 @@ function App() {
           <Container>
             <Routes>
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/home" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
             </Routes>
           </Container>
