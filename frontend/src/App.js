@@ -2,6 +2,7 @@ import { Container } from "react-bootstrap";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import RegisterPage from "./pages/RegisterPage";
 import "./App.css";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
         <main className="py-3">
           <Container>
             <Routes>
-              <Route path="/" element={<RegisterPage />} />
+              <Route path="/login" component={LoginPage} exact />
+              <Route path="/login/:guest" component={LoginPage} exact />
+              <Route path="/register" component={RegisterPage} />
             </Routes>
           </Container>
         </main>
@@ -19,4 +22,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;

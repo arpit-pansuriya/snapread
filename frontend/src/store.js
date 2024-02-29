@@ -3,10 +3,11 @@ import { thunk } from "redux-thunk";
 
 import { composeWithDevTools } from "redux-devtools-extension/developmentOnly"; // Change the import path
 
-import { userRegisterReducer } from "./reducers/user";
+import { userRegisterReducer, userLoginReducer } from "./reducers/user";
 
 const reducer = combineReducers({
   userRegister: userRegisterReducer,
+  userLogin: userLoginReducer,
 });
 
 const initialState = {
@@ -21,4 +22,4 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(...middleware))
 );
 
-export default store;
+export default store;
