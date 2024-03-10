@@ -1,20 +1,24 @@
 import { Container } from "react-bootstrap";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RegisterPage from "./pages/RegisterPage";
 import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <main className="py-3">
           <Container>
             <Routes>
-              <Route path="/login" component={LoginPage} exact />
-              <Route path="/login/:guest" component={LoginPage} exact />
-              <Route path="/register" component={RegisterPage} />
+              <Route path="/" element={<Homepage />} />
+              <Route path="/login" element={<LoginPage />} />
+              <Route path="/login/:guest" element={<LoginPage />} />
+              <Route path="/register" element={<RegisterPage />} />
             </Routes>
           </Container>
         </main>
@@ -24,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default App;
