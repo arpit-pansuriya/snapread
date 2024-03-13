@@ -5,12 +5,12 @@ import { Col, Row } from "react-bootstrap";
 import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { listProducts } from "./../actions/product";
+import { listTopProducts } from "./../actions/product";
 import Paginate from "./../components/Paginate";
 import ProductCarousel from "../components/ProductCarousel";
 import Meta from "../components/Meta";
 
-const HomePage = ({ match }) => {
+const Homepage = ({ match }) => {
   const dispatch = useDispatch();
 
   const keyword = match.params.keyword;
@@ -21,7 +21,7 @@ const HomePage = ({ match }) => {
   const { loading, error, products, page, pages } = productList;
 
   useEffect(() => {
-    dispatch(listProducts(keyword, pageNumber));
+    dispatch(listTopProducts(keyword, pageNumber));
   }, [dispatch, keyword, pageNumber]);
 
   return (
@@ -66,4 +66,4 @@ const HomePage = ({ match }) => {
   );
 };
 
-export default HomePage;
+export default Homepage;
