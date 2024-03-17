@@ -6,6 +6,7 @@ const connectDB = require("./config/db.js");
 
 // Import routes
 const userRoutes = require("./routes/user.js");
+const productRoutes = require("./routes/product.js");
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ const app = express();
 
 // Routes
 app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
 
 const PORT = 5001;
 
