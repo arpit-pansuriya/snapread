@@ -44,10 +44,6 @@ const ProductPage = ({ history, match }) => {
     dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
   }, [match, dispatch, successProductReview]);
 
-  const addToCartHandler = () => {
-    history.push(/cart/${match.params.id}?qty=${qty});
-  };
-
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(createProductReview(match.params.id, { rating, comment }));
@@ -79,10 +75,7 @@ const ProductPage = ({ history, match }) => {
                 </ListGroup.Item>
                 <ListGroup.Item>Genre: {product.genre}</ListGroup.Item>
                 <ListGroup.Item>
-                  <Rating
-                    value={Number(product.rating)}
-                    text={${product.numReviews} reviews}
-                  />
+                  <Rating value={Number(product.rating)} />
                 </ListGroup.Item>
                 <ListGroup.Item>Price: Rs. {product.price}</ListGroup.Item>
                 <ListGroup.Item style={{ textAlign: "justify" }}>
@@ -143,7 +136,6 @@ const ProductPage = ({ history, match }) => {
                   )}
                   <ListGroup.Item>
                     <Button
-                      onClick={addToCartHandler}
                       className="d-grid col-12"
                       type="button"
                       disabled={product.countInStock === 0}

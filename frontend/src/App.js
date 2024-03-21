@@ -6,7 +6,8 @@ import LoginPage from "./pages/LoginPage";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Homepage from "./pages/Homepage";
-
+import ProductPage from "./pages/ProductPage";
+import ProfilePage from "./pages/ProfilePage";
 function App() {
   return (
     <div className="App">
@@ -19,6 +20,8 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/login/:guest" element={<LoginPage />} />
               <Route path="/register" element={<RegisterPage />} />
+              <Route path="/product/:id" component={<ProductPage />} />
+              <Route path="/profile" component={<ProfilePage />} />
             </Routes>
           </Container>
         </main>

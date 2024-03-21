@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
-const User = "./../models/user.js";
-const asyncHandler = "express-async-handler";
+const User = require("./../models/user.js");
+const asyncHandler = require("express-async-handler");
 
 const isSignedIn = asyncHandler(async (req, res, next) => {
   let token;
