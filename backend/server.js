@@ -17,6 +17,7 @@ const app = express();
 // Routes
 app.use("/api/users", userRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/products");
 
 const PORT = 5001;
 
