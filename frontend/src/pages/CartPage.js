@@ -11,7 +11,7 @@ import {
   Card,
 } from "react-bootstrap";
 import Message from "../components/Message";
-import { addToCart, removeFromCart } from "../actions/cart";9
+import { addToCart, removeFromCart } from "../actions/cart";
 
 const CartPage = ({ match, location, history }) => {
   const productId = match.params.id;
@@ -55,7 +55,7 @@ const CartPage = ({ match, location, history }) => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={/product/${item.product}}>{item.name}</Link>
+                    <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>Rs. {item.price}</Col>
                   <Col md={2}>
