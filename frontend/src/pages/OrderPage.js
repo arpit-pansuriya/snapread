@@ -110,7 +110,7 @@ const OrderPage = ({ match, history }) => {
               </p>
               <p>
                 <strong>Email: </strong>
-                <a href={mailto:${order.user.email}}>{order.user.email}</a>
+                <a href={`mailto:${order.user.email}`}>{order.user.email}</a>
               </p>
               <p>
                 <strong>Address: </strong>
@@ -158,7 +158,7 @@ const OrderPage = ({ match, history }) => {
                           />
                         </Col>
                         <Col>
-                          <Link to={/product/${item.product}}>
+                          <Link to={`/product/${item.product}`}>
                             {item.name}
                           </Link>
                         </Col>
